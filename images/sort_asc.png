@@ -4286,7 +4286,7 @@ Top MBA Colleges</a>
 <li><a href="../EventCertificate/index.aspx"> Download Event Certificate
 </a>
 </li>
-<li><a href="../authenticate" target="_blank" title="Certificate Authentication">Certificate Authentication</a></li>
+<li><a href="./authenticate" target="_blank" title="Certificate Authentication">Certificate Authentication</a></li>
 <li><a target="_blank" title="Fee Deposit" href="https://nad.digitallocker.gov.in/students">Digilocker NAD</a></li>
 <li><a href="../jpd" target="_blank" title="Joint Placement Drive">Joint
 Placement Drive</a></li>
