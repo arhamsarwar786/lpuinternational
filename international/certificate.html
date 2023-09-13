@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: montserrat, sans-serif !important;
+    }
+    body{
+        overflow-x: hidden;
+    }
+    .container{
+        width: 100vw;
+        height: fit-content;
+        padding: 2em 3em;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    img{
+        width: 170px;
+        height: 174px;
+        padding: 1em 0;
+    }
+    table{
+        width: 100%;
+        padding: 10px 20px;
+    }
+    tr{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+    td{
+        color: #666;
+        padding: 4px 10px;
+    }
+    td span{
+        font-weight: 600;
+    }
+    .container h1{
+        margin: 1em;
+        font-size: 32px;
+        color: #666666;
+        text-align: center;
+    }
+    p{ 
+        padding: 1em 0;
+        font-size: 14px;
+        color: #666;
+        text-align: center;
+        width: 90%;
+    }
+    .center{
+        width: 450px;
+    }
+    h4{
+        font-weight: 400;
+        font-size: 18px ;
+        color: #666;
+        text-align: center;
+        line-height: 2em;
+
+    }
+    h2{
+        font-size: 24px ;
+        color: #666666;
+        font-weight: 700;
+        text-align: center;
+        margin: 1em 0;
+    }
+    .other{
+        width: 100%;
+        margin: 2em auto;
+        padding: 10px 6px;
+    }
+    .date{
+        width: fit-content;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .date h5{
+        margin-right: 16px;
+    }
+    .note{
+        border: 1px solid #666666;
+        width: 94%;
+        padding: 10px 1em;
+    }
+
+    .note h1{
+        font-size: 18px;
+        font-weight: bold;
+        text-align: left;
+    }
+    ul{
+        width: 100%;
+    }
+    li{
+        list-style: decimal;
+        margin: 10px;
+        width: 98%;
+        font-size: 13px;
+        color: #666;
+    }
+    @media (max-width: 698px){
+        .container{
+            padding: 1em;
+        }
+        td{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: column;
+        }
+        td span{
+            margin: 1em 0;
+        }
+    }
+    @media (max-width: 408px){
+        td{
+            font-size: 15px;
+            padding: 4px 14px;
+            text-align: center;
+        }
+        .center {
+            width: 300px;
+        }
+    }
+</style>
+<body>
+    <div class="container">
+        <table>
+            <tbody>
+                <tr>
+                    <td>Certificate Number : <span id="certificateNumber" class="CertiNo">018559</span></td>
+                    <td>Registration Number : <span id="registrationNumber" class="CertiNo">10140633</span></td>
+                </tr>
+            </tbody>
+        </table>
+        <h1 id="universityName"> Lovely Professional University</h1>
+        <p id="universityDescription">
+            Established by an Act of the Legislature of the State of Punjab, the Lovely Professional University Act, 2005
+            (Act No. 25 of 2005), and recognised by the University Grants Commission under Section 2(f) of the UGC Act,
+            1956
+        </p>
+        <img src="roundLogo.png">
+        <div class="center">
+            <h4>On recommendation of the Academic Council,
+            Lovely Professional University admits
+        </h4>
+        <h2 id="studentName" class="name">Manisha</h2>
+        <h4 id="parentsNames" class="">
+            D/o Mr. Bhag Singh and Ms. Surindra
+            to the degree of
+        </h4>
+        <h2 id="degreeTitle" class="degree">Master of Business Administration</h2>
+        <h4>
+            with
+            <br /> <br />
+            having completed the prescribed requirements
+            in regular education mode
+            Given under the seal of the University
+            at Phagwara, Punjab, India.
+        </h4>
+        </div>
+        <div class="other">
+            <div class="date">
+                <h5>Dated:</h5><p id="certificateDate" class="date">18 Sep 2019</p>
+            </div>
+            <br/>
+            <div class="note">
+                <h1>Note:-</h1>
+                <ul>
+                    <li>This is a digitally generated certificate for authentication purpose only .</li>
+                    <li>The format of this certificate may differ from the original document / Certificate issued by the University .</li>
+                </ul>
+            </div>
+        </div>
+</body>
+<script>
+    // Function to change text content
+    function changeTextContent() {
+
+        let data = {
+            "certificateNumber":"018559",
+            "registrationNumber":"10140633",
+            "type":"Degree",
+            "name":"Arham",
+            "fatherName":"Sarwar",
+            "motherName":"Saddiqui",
+            "degreeName":"Masters of Information Technology",
+            "date":"22, Oct 2010"
+        }
+        // Select elements by their IDs
+        const certificateNumberElement = document.getElementById('certificateNumber');
+        const registrationNumberElement = document.getElementById('registrationNumber');
+        const universityNameElement = document.getElementById('universityName');
+        const universityDescriptionElement = document.getElementById('universityDescription');
+        const studentNameElement = document.getElementById('studentName');
+        const parentsNamesElement = document.getElementById('parentsNames');
+        const degreeTitleElement = document.getElementById('degreeTitle');
+        const certificateDateElement = document.getElementById('certificateDate');
+
+        // Update text content
+        certificateNumberElement.textContent = data.certificateNumber;
+        registrationNumberElement.textContent = data.registrationNumber;
+        // universityNameElement.textContent = data.name;
+        // universityDescriptionElement.textContent = 'New University Description';
+        studentNameElement.textContent = data.name;
+        parentsNamesElement.textContent = ` D/o Mr. ${data.fatherName} and Ms. ${data.motherName} to the degree of`;
+        degreeTitleElement.textContent = data.degreeName;
+        certificateDateElement.textContent = data.date;
+    }
+
+    // Call the function to change text content when needed (e.g., on button click)
+    changeTextContent();
+</script>
+</html>
