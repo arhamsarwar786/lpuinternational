@@ -16,19 +16,6 @@
     body{
         overflow-x: hidden;
     }
-    .waterMark::before{
-        content: "";
-        width: 90vw;
-        height: 1210px;
-        margin: auto;
-        background-image:url(watermark.png);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
-        position: absolute;
-        top: 0;
-        
-    }
     .container{
         width: 100vw;
         height: fit-content;
@@ -36,11 +23,10 @@
         display: flex;
         align-items: center;
         flex-direction: column;
-        position: relative;
     }
     img{
-        width: 174px;
-       /* height: 176px;*/
+        width: 170px;
+        height: 174px;
         padding: 1em 0;
     }
     table{
@@ -151,19 +137,18 @@
     }
 </style>
 <body>
-    <div class="waterMark">
-    </div>
     <div class="container">
         <table>
             <tbody>
                 <tr>
-                    <td>Certificate Number : <span class="CertiNo" id="certificateNumber">253692</span></td> <!--span for data -->
-                    <td>Registration Number : <span class="CertiNo" id="registrationNumber">11719406</span></td> <!--span for data -->
+                    <td>Certificate Number : <span id="certificateNumber" class="CertiNo">018559</span></td>
+                    <td>Registration Number : <span id="registrationNumber" class="CertiNo">10140633</span></td>
                 </tr>
             </tbody>
         </table>
-        <h1> Lovely Professional University</h1>
-        <p>Established by an Act of the Legislature of the State of Punjab, the Lovely Professional University Act, 2005
+        <h1 id="universityName"> Lovely Professional University</h1>
+        <p id="universityDescription">
+            Established by an Act of the Legislature of the State of Punjab, the Lovely Professional University Act, 2005
             (Act No. 25 of 2005), and recognised by the University Grants Commission under Section 2(f) of the UGC Act,
             1956
         </p>
@@ -172,35 +157,34 @@
             <h4>On recommendation of the Academic Council,
             Lovely Professional University admits
         </h4>
-        <h2 class="name" id="studentName">Manisha</h2> <!--class for data -->
-        <h4 id="parentsNames"> <!--class for data -->
-            S/o Mr. Bhag Singh and Ms. Surindra
+        <h2 id="studentName" class="name">Manisha</h2>
+        <h4 id="parentsNames" class="">
+            D/o Mr. Bhag Singh and Ms. Surindra
             to the degree of
         </h4>
-        <h2 class="degree" id="degreeTitle">Master of Business Administration</h2>  <!--class for data -->
+        <h2 id="degreeTitle" class="degree">Master of Business Administration</h2>
         <h4>
-            with first division
+            with
             <br /> <br />
             having completed the prescribed requirements
-            in correspondence education mode <br/>
+            in regular education mode
             Given under the seal of the University
             at Phagwara, Punjab, India.
         </h4>
         </div>
         <div class="other">
             <div class="date">
-                <h5>Dated:</h5><p class="date" id="certificateDate">18 Sep 2019</p>
+                <h5>Dated:</h5><p id="certificateDate" class="date">18 Sep 2019</p>
             </div>
             <br/>
             <div class="note">
                 <h1>Note:-</h1>
                 <ul>
                     <li>This is a digitally generated certificate for authentication purpose only .</li>
-                    <li>The format of this certifciate may differ from the original document / Certificate issued by the University .</li>
+                    <li>The format of this certificate may differ from the original document / Certificate issued by the University .</li>
                 </ul>
             </div>
         </div>
-    </div>
 </body>
 <script>
     // Function to change text content
@@ -210,17 +194,17 @@
             "certificateNumber":"018559",
             "registrationNumber":"10140633",
             "type":"Degree",
-            "name":"Zhang Dapeng",
-            "fatherName":"Zhang Wei",
-            "motherName":"Zhang Jing",
-            "degreeName":"Bachelors  of  Arts (History Honours)",
+            "name":"Arham",
+            "fatherName":"Sarwar",
+            "motherName":"Saddiqui",
+            "degreeName":"Masters of Information Technology",
             "date":"22, Oct 2010"
         }
         // Select elements by their IDs
         const certificateNumberElement = document.getElementById('certificateNumber');
         const registrationNumberElement = document.getElementById('registrationNumber');
-        //const universityNameElement = document.getElementById('universityName');
-        //const universityDescriptionElement = document.getElementById('universityDescription');
+        const universityNameElement = document.getElementById('universityName');
+        const universityDescriptionElement = document.getElementById('universityDescription');
         const studentNameElement = document.getElementById('studentName');
         const parentsNamesElement = document.getElementById('parentsNames');
         const degreeTitleElement = document.getElementById('degreeTitle');
@@ -232,7 +216,7 @@
         // universityNameElement.textContent = data.name;
         // universityDescriptionElement.textContent = 'New University Description';
         studentNameElement.textContent = data.name;
-        parentsNamesElement.textContent = ` S/o Mr. ${data.fatherName} and Ms. ${data.motherName} to the degree of`;
+        parentsNamesElement.textContent = ` D/o Mr. ${data.fatherName} and Ms. ${data.motherName} to the degree of`;
         degreeTitleElement.textContent = data.degreeName;
         certificateDateElement.textContent = data.date;
     }
